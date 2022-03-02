@@ -10,6 +10,7 @@ import UIKit
 class RaceViewController: UIViewController {
     
     //enum constants
+    //new Feature code
     enum Constants {
         static let step: CGFloat = 130
     }
