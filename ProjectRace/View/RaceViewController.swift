@@ -26,6 +26,9 @@ class RaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+       
+      
+        
         //create Road
         imagesRoadView.contentMode = .scaleAspectFill
         imagesRoadView.frame = CGRect(x: CGFloat.zero, y: CGFloat.zero, width: view.frame.width, height: view.frame.height)
@@ -62,15 +65,23 @@ class RaceViewController: UIViewController {
         
         imagesCarView.isUserInteractionEnabled = true
       
-        moveRoad()
+        
+        DispatchQueue.main.async {
+        self.moveRoad()
+        }
         
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
 //            print(imagesWheelView.layer.presentation()?.frame)
 //
 //        }
-       
+
+     
 
         }
+    func viewWillApper() {
+        moveRoad()
+       
+    }
 
 }
     
