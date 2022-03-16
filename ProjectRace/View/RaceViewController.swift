@@ -52,7 +52,7 @@ class RaceViewController: UIViewController {
      
         //create Car
         imagesCarView.contentMode = .scaleAspectFit
-        imagesCarView.frame = CGRect(x: 140, y: 550, width: 130, height: 260)
+        imagesCarView.frame = CGRect(x: 140, y: 550, width: 200, height: 260)
         view.addSubview(imagesCarView)
        
         //swipe

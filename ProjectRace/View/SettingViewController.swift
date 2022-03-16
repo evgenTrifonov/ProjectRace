@@ -12,9 +12,9 @@ class SettingViewController: UIViewController {
     
     var segmentController = UISegmentedControl()
     var imageView = UIImageView()
-    
+        
     let imagesFonView = UIImageView(image: UIImage(named: "oboi"))
-    var menuRace = ["Красная машина", "Синия машина"]
+    var menuRace = ["Красная", "Желтая"]
     let imageArrayCarRace = [UIImage(named: "car.png"),
                              UIImage(named: "carYell.png")]
     
@@ -27,7 +27,6 @@ class SettingViewController: UIViewController {
        // view.backgroundColor = UIColor.gray
         navigationItem.title = "Настройки"
         navigationController.navigationBar.prefersLargeTitles = true
-        
     
       
         //create Fon
@@ -36,7 +35,7 @@ class SettingViewController: UIViewController {
         imagesFonView.frame = CGRect(x: CGFloat.zero, y: CGFloat.zero, width: view.frame.width, height: view.frame.height)
         view.sendSubviewToBack(imagesFonView)
         
-        imageView.frame = CGRect(x: 0, y: 0, width: 130, height: 260)
+        imageView.frame = CGRect(x: 0, y: -190, width: 130, height: 180)
         imageView.center = view.center
         imageView.image = imageArrayCarRace[0]
         view.addSubview(imageView)
@@ -48,9 +47,13 @@ class SettingViewController: UIViewController {
         
         segmentController.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
         
+
         
+   
         
     }
+    
+  
     
     @objc func selectedValue(target: UISegmentedControl) {
         if target == self.segmentController {
