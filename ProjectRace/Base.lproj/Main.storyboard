@@ -20,17 +20,17 @@
                                 <rect key="frame" x="158" y="381" width="93" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Играть"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
                                 <connections>
                                     <action selector="playButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FCO-Yq-Y63"/>
                                     <segue destination="xUA-Id-2aR" kind="show" id="npO-TF-zdt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heN-vE-DXp">
-                                <rect key="frame" x="156" y="451" width="98" height="31"/>
+                                <rect key="frame" x="158" y="480" width="93" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Настройки"/>
+                                <buttonConfiguration key="configuration" style="plain" title=""/>
                                 <connections>
                                     <action selector="settingButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fSE-sR-O2O"/>
                                     <segue destination="AWq-1z-tZn" kind="show" id="1Yu-rN-gV1"/>
@@ -43,6 +43,7 @@
                     <navigationItem key="navigationItem" id="7MS-lw-3vQ"/>
                     <connections>
                         <outlet property="playButtonOutlet" destination="crK-16-s3e" id="h95-za-7vD"/>
+                        <outlet property="settingButtonOutlet" destination="heN-vE-DXp" id="pO9-lc-oV9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
