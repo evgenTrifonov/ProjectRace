@@ -26,7 +26,8 @@ class RaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
+        navigationItem.title = "Выйти"
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
       
         
         //create Road
