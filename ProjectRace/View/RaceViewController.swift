@@ -71,10 +71,7 @@ class RaceViewController: UIViewController {
         self.moveRoad()
         }
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            print(imagesWheelView.layer.presentation()?.frame)
-//
-//        }
+//        intersectsTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(<#T##@objc method#>), userInfo: nil, repeats: true)
 
      
 
