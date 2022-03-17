@@ -8,6 +8,13 @@
 import Foundation
 import UIKit
 
+enum SettingKey {
+    static let lastName = "lastName"
+    static let carColor = "carColor"
+    
+}
+
+
 class SettingViewController: UIViewController {
     
     var segmentController = UISegmentedControl()
