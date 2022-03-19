@@ -15,11 +15,18 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var settingButtonOutlet: UIButton!
     
+    
+    @IBOutlet weak var errorButtonOutlet: UIButton!
+    
+    
     @IBAction func playButton(_ sender: Any) {
         
     }
     
     @IBAction func settingButton(_ sender: Any) {
+    }
+    
+    @IBAction func errorButton(_ sender: Any) {
     }
     
     let imagesFonView = UIImageView(image: UIImage(named: "oboi"))
@@ -44,7 +51,15 @@ class ViewController: UIViewController {
         settingButtonOutlet.titleLabel?.textColor = .white
         settingButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(settingButtonOutlet)
-        settingCnstraintButton()
+        settingCostraintButton()
+        
+        //create button error
+        errorButtonOutlet.setTitle("Страница с ошибкой", for: .normal)
+        errorButtonOutlet.backgroundColor = .red
+        errorButtonOutlet.titleLabel?.textColor = .white
+        errorButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(errorButtonOutlet)
+        errorCnstraintButton()
 
         
         //create Fon
@@ -60,11 +75,18 @@ class ViewController: UIViewController {
         playButtonOutlet!.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
     }
 
-    func settingCnstraintButton() {
+    func settingCostraintButton() {
         settingButtonOutlet.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         settingButtonOutlet.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive = true
         settingButtonOutlet.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
     }
+        
+    func errorCnstraintButton() {
+        errorButtonOutlet.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        errorButtonOutlet.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 100).isActive = true
+        errorButtonOutlet.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -100).isActive = true
+        }
+        
     }
   
 }

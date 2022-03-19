@@ -53,10 +53,7 @@ class SettingViewController: UIViewController {
         view.addSubview(segmentController)
         
         segmentController.addTarget(self, action: #selector(selectedValue), for: .valueChanged)
-        
 
-        
-   
         
     }
     

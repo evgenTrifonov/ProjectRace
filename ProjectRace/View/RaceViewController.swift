@@ -15,6 +15,8 @@ class RaceViewController: UIViewController {
         static let step: CGFloat = 130
     }
     
+   // var contactTimer =
+    
     let imagesRoadView = UIImageView(image: UIImage(named: "street"))
     let imagesRoad2View = UIImageView(image: UIImage(named: "street2"))
     
@@ -26,7 +28,8 @@ class RaceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Выйти"
+        navigationItem.title = "Вы должны объехать припятствия!!!"
+       
 //        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
       
         
@@ -67,15 +70,17 @@ class RaceViewController: UIViewController {
         imagesCarView.isUserInteractionEnabled = true
       
         
+    
+        
         DispatchQueue.main.async {
         self.moveRoad()
-           
         }
         
-        var contactTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(searchContact), userInfo: nil, repeats: true)
+        let contactTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(searchContact), userInfo: nil, repeats: true)
 
-     
-
+        
+        
+      
         }
     func viewWillApper() {
         moveRoad()
@@ -128,15 +133,15 @@ func moveRoad() {
     
     @objc func searchContact() {
         if self.imagesCarView.frame.intersects(self.imagesWheelView.layer.presentation()!.frame){
-            let Controller = UIStoryboard(name: "errorView", bundle: nil)
-            let Storyboard = Controller.instantiateViewController(withIdentifier: "errorView")
-            present(Storyboard, animated: true, completion: nil)
+            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
+            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "ErrorView")
+            present(errorStoryboard, animated: true, completion: nil)
         }
-        if self.imagesCarView.frame.intersects(self.imagesWheel2View.layer.presentation()!.frame){
-            let Controller = UIStoryboard(name: "errorView", bundle: nil)
-            let Storyboard = Controller.instantiateViewController(withIdentifier: "errorView")
-            present(Storyboard, animated: true, completion: nil)
-        }
+//        if self.imagesCarView.frame.intersects(self.imagesWheel2View.layer.presentation()!.frame){
+//            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
+//            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "ErrorView")
+//            present(errorStoryboard, animated: true, completion: nil)
+//        }
     }
     
     
