@@ -69,9 +69,10 @@ class RaceViewController: UIViewController {
         
         DispatchQueue.main.async {
         self.moveRoad()
+           
         }
         
-        contactTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(searchContact), userInfo: nil, repeats: true)
+        var contactTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(searchContact), userInfo: nil, repeats: true)
 
      
 
@@ -127,13 +128,13 @@ func moveRoad() {
     
     @objc func searchContact() {
         if self.imagesCarView.frame.intersects(self.imagesWheelView.layer.presentation()!.frame){
-            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
-            let Storyboard = Controller.instantiateViewController(withIdentifier: "ErrorView")
+            let Controller = UIStoryboard(name: "errorView", bundle: nil)
+            let Storyboard = Controller.instantiateViewController(withIdentifier: "errorView")
             present(Storyboard, animated: true, completion: nil)
         }
         if self.imagesCarView.frame.intersects(self.imagesWheel2View.layer.presentation()!.frame){
-            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
-            let Storyboard = Controller.instantiateViewController(withIdentifier: "ErrorView")
+            let Controller = UIStoryboard(name: "errorView", bundle: nil)
+            let Storyboard = Controller.instantiateViewController(withIdentifier: "errorView")
             present(Storyboard, animated: true, completion: nil)
         }
     }
