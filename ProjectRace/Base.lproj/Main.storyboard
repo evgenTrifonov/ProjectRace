@@ -36,22 +36,12 @@
                                     <segue destination="AWq-1z-tZn" kind="show" id="1Yu-rN-gV1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cm2-ub-CUq">
-                                <rect key="frame" x="180" y="599" width="24" height="14"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title=""/>
-                                <connections>
-                                    <segue destination="EEP-lx-gl8" kind="show" id="NY5-qI-yyx"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="7MS-lw-3vQ"/>
                     <connections>
-                        <outlet property="errorButtonOutlet" destination="Cm2-ub-CUq" id="4WZ-bl-eD3"/>
                         <outlet property="playButtonOutlet" destination="crK-16-s3e" id="h95-za-7vD"/>
                         <outlet property="settingButtonOutlet" destination="heN-vE-DXp" id="pO9-lc-oV9"/>
                     </connections>
@@ -77,22 +67,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xrh-2b-dIR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1664" y="66"/>
-        </scene>
-        <!--Error View-->
-        <scene sceneID="kU3-pT-sgR">
-            <objects>
-                <viewController storyboardIdentifier="errorView" id="EEP-lx-gl8" customClass="ErrorView" customModule="ProjectRace" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vzr-0U-dMJ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="2cT-tZ-qL0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Uf2-nu-LGi"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="BxT-x3-Cap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="899" y="-601"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="1B8-br-Wrl">
