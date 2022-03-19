@@ -68,6 +68,21 @@
             </objects>
             <point key="canvasLocation" x="1664" y="66"/>
         </scene>
+        <!--Error View-->
+        <scene sceneID="kU3-pT-sgR">
+            <objects>
+                <viewController storyboardIdentifier="errorView" id="EEP-lx-gl8" customClass="ErrorView" customModule="ProjectRace" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vzr-0U-dMJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2cT-tZ-qL0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BxT-x3-Cap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2457" y="82"/>
+        </scene>
         <!--Setting View Controller-->
         <scene sceneID="1B8-br-Wrl">
             <objects>
