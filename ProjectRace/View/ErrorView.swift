@@ -12,6 +12,8 @@ class ErrorView: UIViewController {
     
     let errorLabel = UILabel()
     
+    
+    
     let imagesFonView = UIImageView(image: UIImage(named: "oboi"))
     
     override func viewDidLoad() {
@@ -37,8 +39,13 @@ class ErrorView: UIViewController {
         errorLabel.textColor = .red
         view.addSubview(errorLabel)
         
-        
        
+
       
     }
+    @objc func close() {
+        dismiss(animated: true, completion: nil)
+    }
 }
+
+
