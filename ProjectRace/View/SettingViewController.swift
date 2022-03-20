@@ -33,7 +33,7 @@ class SettingViewController: UIViewController {
        
        // view.backgroundColor = UIColor.gray
         navigationItem.title = "Настройки"
-        navigationController.navigationBar.prefersLargeTitles = true
+        navigationController.navigationBar.prefersLargeTitles = false
     
       
         //create Fon

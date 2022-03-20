@@ -43,7 +43,8 @@ class ViewController: UIViewController {
         playButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(playButtonOutlet)
         constraintButton()
-            
+        
+        playButtonOutlet.addTarget(self, action: #selector(playGame), for: .touchDown)
         
         //create button setting
         settingButtonOutlet.setTitle("Настройки", for: .normal)
@@ -67,7 +68,12 @@ class ViewController: UIViewController {
             settingButtonOutlet.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
         }
     }
-  
+    @objc func playGame() {
+        let Controller = UIStoryboard(name: "Main", bundle: nil)
+        let raceStoryboard = Controller.instantiateViewController(withIdentifier: "raceController") as! RaceViewController
+        raceStoryboard.modalPresentationStyle = .fullScreen
+        present(raceStoryboard, animated: true, completion: nil)
+    }
 }
 
 

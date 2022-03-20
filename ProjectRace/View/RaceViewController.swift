@@ -32,9 +32,9 @@ class RaceViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Вы должны объехать припятствия!!!"
-       
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
-      
+        
+     
+           
         
         //create Road
         imagesRoadView.contentMode = .scaleAspectFill
@@ -134,14 +134,14 @@ func moveRoad() {
     
     @objc func searchContact() {
         if self.imagesCarView.frame.intersects(self.imagesWheelView.layer.presentation()!.frame){
-            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
-            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "errorView")
+            let Controller = UIStoryboard(name: "Main", bundle: nil)
+            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "errorController") as! ErrorViewController
             errorStoryboard.modalPresentationStyle = .fullScreen
             present(errorStoryboard, animated: true, completion: nil)
         }
         if self.imagesCarView.frame.intersects(self.imagesWheel2View.layer.presentation()!.frame){
-            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
-            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "errorView")
+            let Controller = UIStoryboard(name: "Main", bundle: nil)
+            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "errorController") as! ErrorViewController
             errorStoryboard.modalPresentationStyle = .fullScreen
             present(errorStoryboard, animated: true, completion: nil)
         }

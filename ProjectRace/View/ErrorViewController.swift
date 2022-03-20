@@ -8,13 +8,11 @@
 import Foundation
 import UIKit
 
-class ErrorView: UIViewController {
+class ErrorViewController: UIViewController {
     
     let errorLabel = UILabel()
-    
-    //let resrartButton = UIButton()
-    
-    
+  
+  
     @IBOutlet weak var restartButton: UIButton!
     
     let imagesFonView = UIImageView(image: UIImage(named: "oboi"))
@@ -24,9 +22,7 @@ class ErrorView: UIViewController {
         
 //        let navigationController = UINavigationController.init(rootViewController: ViewController())
        
-       // view.backgroundColor = UIColor.gray
-//        navigationItem.title = "Вы допустили столкновение"
-//        navigationController.navigationBar.prefersLargeTitles = true
+
         
         //create Fon
         imagesFonView.contentMode = .scaleAspectFill
@@ -44,19 +40,19 @@ class ErrorView: UIViewController {
         view.addSubview(errorLabel)
         errorConstraintLabel()
         
-        restartButton.setTitle("Начать заново", for: .normal)
+        restartButton.setTitle("Выйти", for: .normal)
         restartButton.backgroundColor = .red
         restartButton.titleLabel?.textColor = .white
         restartButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(restartButton)
         restartCostraintButton()
         
-        restartButton.addTarget(self, action: #selector(restartButtonAction), for: .touchDown)
+        restartButton.addTarget(self, action: #selector(close), for: .touchDown)
 
         func errorConstraintLabel() {
             errorLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             errorLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-            errorLabel.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+            errorLabel.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
         }
         
         func restartCostraintButton() {
@@ -67,19 +63,17 @@ class ErrorView: UIViewController {
       
     }
     
-    
     @IBAction func restartButtonAction(_ sender: Any) {
-        let oneController = UIStoryboard(name: "Error", bundle: nil)
-        let errorView = oneController.instantiateViewController(withIdentifier: "errorView") as! ErrorView
         
-//        let viewController = ViewController.instantiateViewController(withIdentifier: "errorView")
-//        viewController.modalPresentationStyle = .fullScreen
-//        present(viewController, animated: true, completion: nil)
-//
     }
-    
+
+        
     @objc func close() {
-        dismiss(animated: true, completion: nil)
+       // dismiss(animated: true, completion: nil)
+        let Controller = UIStoryboard(name: "Main", bundle: nil)
+        let errorStoryboard = Controller.instantiateViewController(withIdentifier: "viewController") as! ViewController
+        errorStoryboard.modalPresentationStyle = .fullScreen
+        present(errorStoryboard, animated: true, completion: nil)
     }
 }
 
