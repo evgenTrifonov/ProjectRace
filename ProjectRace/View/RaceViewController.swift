@@ -9,10 +9,16 @@ import UIKit
 
 class RaceViewController: UIViewController {
     
+    
+    let Controller = UIStoryboard()
+    
     //enum constants
+    //new Feature code
     enum Constants {
         static let step: CGFloat = 130
     }
+    
+   // var contactTimer =
     
     let imagesRoadView = UIImageView(image: UIImage(named: "street"))
     let imagesRoad2View = UIImageView(image: UIImage(named: "street2"))
@@ -24,6 +30,11 @@ class RaceViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Вы должны объехать припятствия!!!"
+       
+//        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close, target: self, action: #selector(close))
+      
         
         //create Road
         imagesRoadView.contentMode = .scaleAspectFill
@@ -47,7 +58,7 @@ class RaceViewController: UIViewController {
      
         //create Car
         imagesCarView.contentMode = .scaleAspectFit
-        imagesCarView.frame = CGRect(x: 140, y: 550, width: 130, height: 260)
+        imagesCarView.frame = CGRect(x: 140, y: 550, width: 200, height: 260)
         view.addSubview(imagesCarView)
        
         //swipe
@@ -61,21 +72,29 @@ class RaceViewController: UIViewController {
         
         imagesCarView.isUserInteractionEnabled = true
       
-        moveRoad()
         
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-//            print(imagesWheelView.layer.presentation()?.frame)
-//
-//        }
-       
-
+    
+        
+        DispatchQueue.main.async {
+        self.moveRoad()
         }
+        
+        let contactTimer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(searchContact), userInfo: nil, repeats: true)
+
+        
+        
+      
+        }
+    func viewWillApper() {
+        moveRoad()
+       
+    }
 
 }
     
 //MARK: - Method
 //move Road
-private extension RaceViewController {
+extension RaceViewController {
 func moveRoad() {
     UIView.animate(withDuration: 5,
                    delay: 0.0,
@@ -111,10 +130,27 @@ func moveRoad() {
         
     }
     
+  
+    
+    @objc func searchContact() {
+        if self.imagesCarView.frame.intersects(self.imagesWheelView.layer.presentation()!.frame){
+            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
+            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "errorView")
+            errorStoryboard.modalPresentationStyle = .fullScreen
+            present(errorStoryboard, animated: true, completion: nil)
+        }
+        if self.imagesCarView.frame.intersects(self.imagesWheel2View.layer.presentation()!.frame){
+            let Controller = UIStoryboard(name: "ErrorView", bundle: nil)
+            let errorStoryboard = Controller.instantiateViewController(withIdentifier: "errorView")
+            errorStoryboard.modalPresentationStyle = .fullScreen
+            present(errorStoryboard, animated: true, completion: nil)
+        }
+        
+    }
+    
     @objc func close() {
         dismiss(animated: true, completion: nil)
     }
-    
     
 }
 
