@@ -12,14 +12,10 @@ class ViewController: UIViewController {
    //var button = UIButton()
     
     @IBOutlet weak var playButtonOutlet: UIButton!
-    
     @IBOutlet weak var settingButtonOutlet: UIButton!
-    
-    
-    
+
     
     @IBAction func playButton(_ sender: Any) {
-        
     }
     
     @IBAction func settingButton(_ sender: Any) {
@@ -33,16 +29,21 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         //create Fon
         imagesFonView.contentMode = .scaleAspectFill
         view.addSubview(imagesFonView)
         imagesFonView.frame = CGRect(x: CGFloat.zero, y: CGFloat.zero, width: view.frame.width, height: view.frame.height)
         view.sendSubviewToBack(imagesFonView)
        
-         playGame()
+       
+        playButtonOutlet.setTitle("Играть", for: .normal)
+        playButtonOutlet.backgroundColor = .red
+        playButtonOutlet.titleLabel?.textColor = .white
+        playButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(playButtonOutlet)
+        constraintButton()
             
-        ncObserver.addObserver(self, selector: #selector(self.playGame), name: Notification.Name("PauseMusic"), object: nil)
         
         //create button setting
         settingButtonOutlet.setTitle("Настройки", for: .normal)
@@ -52,37 +53,25 @@ class ViewController: UIViewController {
         view.addSubview(settingButtonOutlet)
         settingCostraintButton()
         
+        
+        
+        func constraintButton() {
+            playButtonOutlet.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            playButtonOutlet.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            playButtonOutlet.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
+        }
+        
         func settingCostraintButton() {
             settingButtonOutlet.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
             settingButtonOutlet.centerYAnchor.constraint(equalTo: view.centerYAnchor, constant: 50).isActive = true
             settingButtonOutlet.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
         }
-        
     }
   
 }
 
-extension ViewController {
-func playGame() {
-    //create button play
-    playButtonOutlet.setTitle("Играть", for: .normal)
-    playButtonOutlet.backgroundColor = .red
-    playButtonOutlet.titleLabel?.textColor = .white
-    playButtonOutlet.translatesAutoresizingMaskIntoConstraints = false
-    view.addSubview(playButtonOutlet)
-    constraintButton()
-    
-    func constraintButton() {
-       playButtonOutlet!.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-       playButtonOutlet!.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-       playButtonOutlet!.widthAnchor.constraint(equalTo: view.widthAnchor, constant: -50).isActive = true
-    }
 
-}
-    @objc func close() {
-        dismiss(animated: true, completion: nil)
-    }
-}
+
 
 
 
